@@ -7,8 +7,8 @@ end
 
 
 # #Facebook OAuth2 Strategy for OmniAuth.s
-# gem 'omniauth-facebook'
-# gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth'
 
 
 #This is straightforward in production environments but local development environments are often 
