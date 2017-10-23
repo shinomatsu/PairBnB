@@ -1,13 +1,11 @@
 Rails.application.routes.draw do
+  root "listings#index"
   # get 'listings/index'
-
   # get 'listings/show'
-
   # get 'listings/create'
-  root "hello#index"
-  resources :users, only: :show
+  resources :users, only: [:show, :edit, :update]
   # resources :shinos, except: [:show]
-  resources :listings, only: [:index, :show, :create]
+  resources :listings, only: [:index, :show, :create, :update, :destroy]
 
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, controller: "clearance/sessions", only: [:create]
