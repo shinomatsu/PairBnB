@@ -6,6 +6,9 @@ git_source(:github) do |repo_name|
 end
 
 
+#Clearance is intended to be small, simple, and well-tested. It has opinionated defaults but is intended to be easy to override.
+gem "clearance"
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use postgresql as the database for Active Record
