@@ -6,6 +6,14 @@ git_source(:github) do |repo_name|
 end
 
 
+# #Facebook OAuth2 Strategy for OmniAuth.s
+# gem 'omniauth-facebook'
+# gem 'omniauth'
+
+
+#This is straightforward in production environments but local development environments are often 
+gem "figaro"
+
 #Clearance is intended to be small, simple, and well-tested. It has opinionated defaults but is intended to be easy to override.
 gem "clearance"
 

@@ -22,7 +22,9 @@ class Clearance::SessionsController < Clearance::BaseController
 
     sign_in(@user) do |status|
       if status.success?
-        redirect_back_or url_after_create
+        # byebug
+        redirect_back_or user_path(@user)
+        # redirect_to current_user #redirect to user object means go to the show path of the object
       else
         flash.now.notice = status.failure_message
         render template: "sessions/new", status: :unauthorized

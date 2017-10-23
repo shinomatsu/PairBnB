@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   # get 'listings/show'
 
   # get 'listings/create'
-  root "listings#index"
+  root "hello#index"
+  resources :users, only: :show
   # resources :shinos, except: [:show]
   resources :listings, only: [:index, :show, :create]
 
