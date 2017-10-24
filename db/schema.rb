@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171024022534) do
+ActiveRecord::Schema.define(version: 20171024100651) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,14 @@ ActiveRecord::Schema.define(version: 20171024022534) do
     t.string "room_type"
     t.integer "price"
     t.text "house_rules"
+    t.integer "place_type"
+    t.integer "bed_number"
+    t.integer "guest_number"
+    t.string "country"
+    t.string "state"
+    t.string "city"
+    t.string "zipcode"
+    t.string "address"
     t.index ["user_id"], name: "index_listings_on_user_id"
   end
 
@@ -47,6 +55,9 @@ ActiveRecord::Schema.define(version: 20171024022534) do
     t.string "remember_token", limit: 128, null: false
     t.string "first_name"
     t.string "last_name"
+    t.integer "gender"
+    t.string "phone"
+    t.string "country"
     t.index ["email"], name: "index_users_on_email"
     t.index ["remember_token"], name: "index_users_on_remember_token"
   end

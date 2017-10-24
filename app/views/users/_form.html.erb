@@ -1,4 +1,4 @@
-
+<%= form_for @user do |form| %>
 
 <!-- first_name_form -->
 <div class="text-field">
@@ -12,6 +12,18 @@
   <%= form.text_field :last_name, type: 'last_name' %>
 </div>
 
+<!-- gender_form -->
+<div class="text-field">
+  <%= form.label :gender %>
+  <%= form.text_field :gender, type: 'gender' %>
+</div>
+
+<!-- country_form -->
+<div class="text-field">
+  <%= form.label :country %>
+  <%= form.text_field :country, type: 'country' %>
+</div>
+
 
 <!-- email_form -->
 <div class="text-field">
@@ -19,8 +31,22 @@
   <%= form.text_field :email, type: 'email' %>
 </div>
 
+<!-- phone_form -->
+<div class="text-field">
+  <%= form.label :phone %>
+  <%= form.text_field :phone, type: 'phone' %>
+</div>
+
 <!-- password_form -->
 <div class="password-field">
   <%= form.label :password %>
   <%= form.password_field :password %>
 </div>
+
+<div class="submit-field">
+  <%= form.submit %>
+</div>
+  
+<% end %> 
+
+

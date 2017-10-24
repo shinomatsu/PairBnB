@@ -15,6 +15,7 @@
     <% if signed_in? -%>
       <%= link_to t(".sign_out"), sign_out_path, method: :delete %>
       <%= link_to "My page", user_path(current_user) %>
+      <%= link_to "Home", listings_path %>
 
     <% else -%>
       <%= link_to t(".sign_up"), sign_up_path %>
