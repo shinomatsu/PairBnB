@@ -10,6 +10,7 @@ end
 gem 'omniauth-facebook'
 gem 'omniauth'
 
+gem 'faker'
 
 #This is straightforward in production environments but local development environments are often 
 gem "figaro"

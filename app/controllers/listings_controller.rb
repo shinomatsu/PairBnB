@@ -40,6 +40,11 @@ class ListingsController < ApplicationController
   end
 
   def destroy
+    if @listing.destroy
+      redirect_to "/listings"
+    else
+    end
+
   end
   
 

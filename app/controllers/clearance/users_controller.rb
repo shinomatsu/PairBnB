@@ -50,12 +50,19 @@ class Clearance::UsersController < Clearance::BaseController
     last_name = user_params.delete(:last_name)
     email = user_params.delete(:email)
     password = user_params.delete(:password)
+    gender = user_params.delete(:gender)
+    phone = user_params.delete(:phone)
+    country = user_params.delete(:country)
+
 
     Clearance.configuration.user_model.new(user_params).tap do |user|
       user.first_name = first_name
       user.last_name = last_name
       user.email = email
       user.password = password
+      user.gender = gender
+      user.phone = phone
+      user.country = country
     end
   end
 
