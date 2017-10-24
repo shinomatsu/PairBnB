@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   # get 'listings/create'
   resources :users, only: [:show, :edit, :update]
   # resources :shinos, except: [:show]
-  resources :listings, only: [:index, :show, :create, :update, :destroy]
+  resources :listings
+  # , only: [:index, :show, :edit, :new, :create, :update, :destroy]
 
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, controller: "clearance/sessions", only: [:create]

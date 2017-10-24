@@ -1,2 +1,44 @@
-<h2>Listings#index</h2>
-<!-- <p>Find me in app/views/listings/index.html.erb</p> -->
+<h2>All Listings</h2>
+
+<div class="all_listings">
+<table class= "table">
+
+<thead>
+ <tr>
+ <th>User</th>
+ <th>Title</th>
+ <th>Room type</th>
+ <th>Nom of rooms</th>
+ <th>Price</th>
+ <th>Description</th>
+ <th>House Rules</th>
+
+ </tr>
+
+</thead>
+
+  <tbody>
+    <% @listings.each do |listing| %>
+      <tr>
+      <td><%= listing.user.email %></td>
+        <td><%= listing.title %></td>
+        <td><%= listing.room_type %></td>
+        <td><%= listing.num_of_rooms %></td>
+        <td><%= listing.price %></td>
+        <td><%= listing.description %></td>
+        <td><%= listing.house_rules %></td>
+
+        <td><%= link_to 'Show', listing_path(listing) %></td>
+        <td><%= link_to 'Edit?', edit_listing_path(listing) %></td>
+        <td><%= link_to 'Destroy', listing_path(listing), method: :delete %></td>
+
+
+       
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>
+</div>
+
+<%= link_to 'New Listing', new_listing_path %>

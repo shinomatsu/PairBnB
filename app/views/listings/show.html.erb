@@ -1,2 +1,36 @@
-<h1>Listings#show</h1>
-<p>Find me in app/views/listings/show.html.erb</p>
+<div class="listing_information">
+<br>
+<br>
+    <p>
+    <strong>Title:</strong>
+    <%= @listing.title %>
+    </p>
+
+    <p>
+    <strong>Roomtype:</strong>
+    <%= @listing.room_type %>
+    </p>
+
+    <p>
+    <strong>Num of rooms:</strong>
+    <%= @listing.num_of_rooms %>
+    </p>
+
+    <p>
+    <strong>Price/par night:</strong>
+    <%= @listing.price %>
+    </p>
+
+    <p>
+    <strong>Description:</strong>
+    <%= @listing.description %>
+    </p>
+
+    <p>
+    <strong>House rules:</strong>
+    <%= @listing.house_rules %>
+    </p>
+</div>
+
+<%= link_to "Edit?", edit_listing_path(@listing) %>
+<%= link_to "Back", listings_path %>
