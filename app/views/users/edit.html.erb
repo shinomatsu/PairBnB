@@ -1,22 +1,34 @@
 <% provide(:title, "Edit user") %>
-<h2>Update your profile</h2>
+<br>
+<br>
+<p>Update your profile</p>
 
-<div class="row">
   <div class="edit">
-    <%= form_for(@user) do |f| %>
+  <%= form_for(@user) do |form| %>
 
-      <p><%= f.label :first_name %><%= f.text_field :first_name, class: 'form-control' %><p>
-      <p><%= f.label :last_name %><%= f.text_field :last_name, class: 'form-control' %><p>
-      <p><%= f.label :email %><%= f.email_field :email, class: 'form-control' %><p>
+	<div class="text-field">
+	  <%= form.label :first_name %>
+	  <%= form.text_field :first_name, type: 'first_name' %>
+	</div>
 
-     <!--  <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
+	<div class="text-field">
+	  <%= form.label :last_name %>
+	  <%= form.text_field :last_name, type: 'last_name' %>
+	</div>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation, class: 'form-control' %> -->
-
-      <%= f.submit "Save changes", class: "btn btn-primary" %>
+	<div class="text-field">
+	  <%= form.label :email %>
+	  <%= form.text_field :email, type: 'email' %>
+	</div>
+     
+     <div class="submit-field">
+      <%= form.submit "Save changes"%>
+     </div>
+     
     <% end %>
 
+
   </div>
-</div>
+
+
+ 

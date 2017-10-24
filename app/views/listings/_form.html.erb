@@ -1,0 +1,43 @@
+<%= form_for @listing do |form| %>
+<!-- title_form -->
+<div class="text-field">
+  <%= form.label :title %>
+  <%= form.text_field :title, type: 'title' %>
+</div>
+
+<!-- roomtype_form -->
+<div class="text-field">
+  <%= form.label :room_type %>
+  <%= form.text_field :room_type, type: 'room_type' %>
+</div>
+
+
+<!-- num_of_room_form -->
+<div class="text-field">
+  <%= form.label :num_of_rooms %>
+  <%= form.text_field :num_of_rooms, type: 'num_of_rooms' %>
+</div>
+
+<!-- price_form -->
+<div class="text-field">
+  <%= form.label :price %>
+  <%= form.text_field :price, type: 'price' %>
+</div>
+
+<!-- description -->
+<div class="text-field">
+  <%= form.label :description %>
+  <%= form.text_field :description, type: 'description' %>
+</div>
+
+<!-- house_rules -->
+<div class="text-field">
+  <%= form.label :house_rules %>
+  <%= form.text_field :house_rules, type: 'house_rules' %>
+</div>
+
+    <div class="submit-field">
+      <%= form.submit %>
+    </div>
+  
+<% end %>
