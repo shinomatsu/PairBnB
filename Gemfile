@@ -5,6 +5,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+## Gemfile for Rails 3+, Sinatra, and Merb
+gem 'will_paginate', '~> 3.1.0'
+
 
 # #Facebook OAuth2 Strategy for OmniAuth.s
 gem 'omniauth-facebook'

@@ -5,11 +5,14 @@
 
 <thead>
  <tr>
- <th>User</th>
- <th>Title</th>
- <th>Room type</th>
+ <th>Name</th>
+ <th>country</th>
+ <th>city</th>
+ <th>Propaty type</th>
  <th>Nom of rooms</th>
- <th>Price</th>
+ <th>Nom of bed</th>
+ <th>Nom of guest</th>
+ <th>Price(RM)</th>
  <th>Description</th>
  <th>House Rules</th>
 
@@ -20,10 +23,13 @@
   <tbody>
     <% @listings.each do |listing| %>
       <tr>
-      <td><%= listing.user.email %></td>
         <td><%= listing.title %></td>
+        <td><%= listing.country %></td>
+        <td><%= listing.city %></td>
         <td><%= listing.room_type %></td>
         <td><%= listing.num_of_rooms %></td>
+        <td><%= listing.bed_number %></td>
+        <td><%= listing.guest_number %></td>
         <td><%= listing.price %></td>
         <td><%= listing.description %></td>
         <td><%= listing.house_rules %></td>

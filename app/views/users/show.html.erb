@@ -1,9 +1,34 @@
 <div class="user_information">
 <br>
 <br>
-<p>Email:<%= @user.email %></p>
-<p>name : <%= @user.first_name %> <%= @user.last_name %></p>
-</div>
 
+
+    <p>
+    <strong>Name:</strong>
+    <%= @user.first_name %> <%= @user.last_name %>
+    </p>
+
+    <p>
+    <strong>Country:</strong>
+    <%= @user.country %>
+    </p>
+
+    <p>
+    <strong>Gender:</strong>
+    <%= @user.gender %>
+    </p>
+
+    <p>
+    <strong>Email:</strong>
+    <%= @user.email %>
+    </p>
+
+    <p>
+    <strong>Phone:</strong>
+    <%= @user.phone %>
+    </p>
+
+</div>
+  
 <!-- edit user's profile-->
 <%= link_to "Edit?", edit_user_path %>

@@ -1,34 +1,11 @@
-<% provide(:title, "Edit user") %>
 <br>
 <br>
 <p>Update your profile</p>
 
-  <div class="edit">
-  <%= form_for(@user) do |form| %>
 
-	<div class="text-field">
-	  <%= form.label :first_name %>
-	  <%= form.text_field :first_name, type: 'first_name' %>
-	</div>
+<%= render 'form'%>
 
-	<div class="text-field">
-	  <%= form.label :last_name %>
-	  <%= form.text_field :last_name, type: 'last_name' %>
-	</div>
-
-	<div class="text-field">
-	  <%= form.label :email %>
-	  <%= form.text_field :email, type: 'email' %>
-	</div>
-     
-     <div class="submit-field">
-      <%= form.submit "Save changes"%>
-     </div>
-     
-    <% end %>
-
-
-  </div>
+<%= link_to "Back", user_path(@user) %>
 
 
  

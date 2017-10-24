@@ -2,12 +2,22 @@
 <br>
 <br>
     <p>
-    <strong>Title:</strong>
+    <strong>Name:</strong>
     <%= @listing.title %>
     </p>
 
     <p>
-    <strong>Roomtype:</strong>
+    <strong>Country:</strong>
+    <%= @listing.country %>
+    </p>
+
+    <p>
+    <strong>City:</strong>
+    <%= @listing.city %>
+    </p>
+
+    <p>
+    <strong>Propaty type:</strong>
     <%= @listing.room_type %>
     </p>
 
@@ -17,7 +27,17 @@
     </p>
 
     <p>
-    <strong>Price/par night:</strong>
+    <strong>Num of beds:</strong>
+    <%= @listing.bed_number %>
+    </p>
+
+    <p>
+    <strong>Num of guest:</strong>
+    <%= @listing.guest_number %>
+    </p>
+
+    <p>
+    <strong>Price/par night(RM):</strong>
     <%= @listing.price %>
     </p>
 
