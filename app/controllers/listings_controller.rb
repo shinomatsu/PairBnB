@@ -1,5 +1,5 @@
 class ListingsController < ApplicationController
-	before_action :set_listing, only:[:show, :edit, :update, :destroy]
+	before_action :set_listing, only:[:show, :edit, :update, :destroy, :verify]
 	before_action :require_login, only: [:show,:edit,:update,:destroy]
 
 
@@ -15,6 +15,8 @@ class ListingsController < ApplicationController
 
   def new
     @listing = Listing.new
+    # authorization code
+
   end
 
   def create
@@ -45,6 +47,24 @@ class ListingsController < ApplicationController
     else
     end
 
+  end
+
+  def verify
+
+       if current_user.customer?
+        flash[:notice] = "Sorry. You do not have the permissino to verify a property."
+        redirect_to '/'
+       else 
+
+
+        @listing.update(verification: true)
+        @listing.save
+        flash[:notice] = "Property has been verified."
+        redirect_to '/'
+      # end authorization code
+
+      # other code to make the new action work!
+       end
   end
   
 

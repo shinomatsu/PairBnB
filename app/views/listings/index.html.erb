@@ -18,6 +18,7 @@
  <th>Price(RM)</th>
  <th>Description</th>
  <th>House Rules</th>
+<!--  <th>verification</th> -->
 
  </tr>
 
@@ -36,12 +37,17 @@
         <td><%= listing.price %></td>
         <td><%= listing.description %></td>
         <td><%= listing.house_rules %></td>
+        <!-- <td><%= listing.verification %></td> -->
+
 
         <td><%= link_to 'Show', listing_path(listing) %></td>
         <td><%= link_to 'Edit?', edit_listing_path(listing) %></td>
         <td><%= link_to 'Destroy', listing_path(listing), method: :delete %></td>
-
-
+        <% if current_user.superadmin? || current_user.moderator? %>
+            <td>
+                <%= button_to "verify!", verify_path(listing) %>
+            </td>
+        <% end %>
        
       </tr>
     <% end %>
