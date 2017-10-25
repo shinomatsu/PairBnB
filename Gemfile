@@ -8,6 +8,9 @@ end
 ## Gemfile for Rails 3+, Sinatra, and Merb
 gem 'will_paginate', '~> 3.1.0'
 
+#This gem provides a simple and extremely flexible way to upload files from Ruby applications. 
+gem 'carrierwave', '~> 1.0'
+
 
 # #Facebook OAuth2 Strategy for OmniAuth.s
 gem 'omniauth-facebook'
