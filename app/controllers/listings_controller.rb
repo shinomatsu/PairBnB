@@ -5,7 +5,7 @@ class ListingsController < ApplicationController
 
   #get /listings
   def index
-  	@listings = Listing.all
+  	@listings = Listing.all.paginate(:page => params[:page], :per_page => 15)
   	# render :"index",layout:true
   end
 

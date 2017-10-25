@@ -1,5 +1,8 @@
 <h2>All Listings</h2>
 
+
+<%= link_to 'New Listing', new_listing_path %>
+
 <div class="all_listings">
 <table class= "table">
 
@@ -47,4 +50,4 @@
 </table>
 </div>
 
-<%= link_to 'New Listing', new_listing_path %>
+<%= will_paginate @listings %>
