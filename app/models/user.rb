@@ -1,9 +1,8 @@
 class User < ApplicationRecord
   include Clearance::User
   
-
-       #Declare an enum attribute where the values map to integers in the database
-	    enum role: [:superadmin, :moderator, :customer]
+    #Declare an enum attribute where the values map to integers in the database
+	enum role: [:superadmin, :moderator, :customer]
 
 	has_many :authentications, dependent: :destroy
 	has_many :listings
