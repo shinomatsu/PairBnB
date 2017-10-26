@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :bookings
   root "listings#index"
   # get 'listings/index'
   # get 'listings/show'

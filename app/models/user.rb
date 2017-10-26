@@ -5,7 +5,8 @@ class User < ApplicationRecord
 	enum role: [:superadmin, :moderator, :customer]
 
 	has_many :authentications, dependent: :destroy
-	has_many :listings
+	has_many :listings, dependent: :destroy
+	has_many :bookings, dependent: :destroy
 
 	    def self.create_with_auth_and_hash(authentication, auth_hash)
 # byebug
