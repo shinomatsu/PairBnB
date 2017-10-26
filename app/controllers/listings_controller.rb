@@ -5,7 +5,7 @@ class ListingsController < ApplicationController
 
   #get /listings
   def index
-  	@listings = Listing.all.paginate(:page => params[:page], :per_page => 15)
+  	@listings = Listing.all.order(:id).paginate(:page => params[:page], :per_page => 15)
   	# render :"index",layout:true
   end
 
@@ -33,6 +33,7 @@ class ListingsController < ApplicationController
   end
 
   def update
+    # byebug
     if @listing.update(listing_params)
       redirect_to listing_path
     else
@@ -73,10 +74,12 @@ class ListingsController < ApplicationController
 		@listing = Listing.find(params[:id])
 
 
+
+
 	end
 
 	def listing_params
-		params.require(:listing).permit(:user,:title,:num_of_rooms,:description,:room_type,:price,:house_rules,:bed_number,:guest_number,:country,:state,:city,:zipcode,:address,photos:[])
+		params.require(:listing).permit(:user,:title,:num_of_rooms,:description,:room_type,:price,:house_rules,:bed_number,:guest_number,:country,:state,:city,:zipcode,:address,photos: [])
 
 	end
 

@@ -9,7 +9,7 @@ end
 gem 'will_paginate', '~> 3.1.0'
 
 #This gem provides a simple and extremely flexible way to upload files from Ruby applications. 
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.0.0'
 gem "mini_magick"
 
 
