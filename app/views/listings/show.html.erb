@@ -1,6 +1,45 @@
+
+<div class="main">
+<% if @listing.photos?  %>
+<!-- carousel With controls -->
+<div class="container">
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ul>
+  
+  <!-- The slideshow -->
+    <div class="carousel-inner">
+          <div class="item active">
+            <%= image_tag @listing.photos[0].url %>
+          </div>
+            <% @listing.photos.shift %>
+            <% @listing.photos.each do |photo| %>
+              <div class="item">
+                <%= image_tag photo.url %>
+              </div>
+            <% end %>
+        </div>
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+
+</div>
+<% else %>
+<% end %>
+
+
 <div class="listing_information">
-<br>
-<br>
+
     <p>
     <strong>Name:</strong>
     <%= @listing.title %>
@@ -50,6 +89,7 @@
     <strong>House rules:</strong>
     <%= @listing.house_rules %>
     </p>
+</div>
 </div>
 
 <%= link_to "Edit?", edit_listing_path(@listing) %>
