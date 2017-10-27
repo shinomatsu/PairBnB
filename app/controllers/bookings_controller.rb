@@ -25,19 +25,21 @@ class BookingsController < ApplicationController
   # POST /bookings
   # POST /bookings.json
   def create
-  respond_to do |format|
+  
     @listing =Listing.find(params[:id])
     @booking = current_user.bookings.new(booking_params)
     @booking.listing_id = @listing.id
-
+#byebug
       if @booking.save
-        format.html { redirect_to @booking, notice: 'Booking was successfully updated.' }
-        format.json { render :show, status: :ok, location: @booking }
+        respond_to do |format|
+          format.html { redirect_to @booking, notice: 'Booking was successfully updated.' }
+          format.json { render :show, status: :ok, location: @booking }
+        end
       else
-        format.html { render :edit }
-        format.json { render json: @booking.errors, status: :unprocessable_entity }
+        @errors = @booking.errors
+        render "listings/show"
       end
-    end
+  
   end
 
   # PATCH/PUT /bookings/1
