@@ -1,0 +1,40 @@
+
+<div class="actions">
+<%= form_for @booking, url: reservation_path(@listing) do |form| %>
+  <% if @booking.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
+
+      <ul>
+      <% @booking.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<!-- guest_numbers -->
+  <div>
+    <%= form.label :no_of_guests %>
+    <%= form.number_field :no_of_guests %>
+  </div>
+
+<!-- startdate -->
+    <div>
+    <%= form.label :start_date %>
+    <%= form.date_field :start_date %>
+  </div>
+
+<!-- enddate -->
+  <div>
+    <%= form.label :end_date %>
+    <%= form.date_field :end_date %>
+  </div>
+
+
+
+
+    <%= form.submit "Submit booking" %>
+
+  </div>
+<% end %>

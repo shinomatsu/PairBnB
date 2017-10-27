@@ -2,9 +2,11 @@ class UsersController < ApplicationController
 	before_action :set_user,only: [:show,:edit,:update]
 	
 	def index
+		@user = User.all
 	end
 
 	def show
+		@bookings = @user.bookings
 		# @user = User.find(params[:id])
 	end
 

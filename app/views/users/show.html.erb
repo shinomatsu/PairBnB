@@ -28,7 +28,35 @@
     <%= @user.phone %>
     </p>
 
-</div>
-  
 <!-- edit user's profile-->
 <%= link_to "Edit?", edit_user_path %>
+
+<!-- edit user's reservation-->
+<div class="user_bookings">
+<table>
+<tr>
+    <td>Listing name</td>
+    <td>Start_date</td>
+    <td>End_date</td>
+    <td>Number of guests</td>
+    <td>Total</td>
+</tr>
+    <% @bookings.each do |booking|%>
+    <tr>
+    <td><%= link_to booking.listing.title, booking.listing %></td>
+    <td><%= booking.start_date %></td>
+    <td><%= booking.end_date %></td>
+    <td><%= booking.no_of_guests %></td>
+    <td><%= booking.total_price %></td>
+    <td><%= link_to "Cansel bookig", booking, method: :delete %></td>
+
+
+
+    </tr>
+<% end %>
+        
+</table>
+</div>
+
+</div>
+  
