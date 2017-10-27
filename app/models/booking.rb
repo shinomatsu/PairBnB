@@ -17,6 +17,13 @@ class Booking < ApplicationRecord
 		(x.start_date - y.end_date) * (y.start_date - x.end_date) > 0
 	end
 
+	def total_price
+		price = listing.price
+		num_date = (start_date..end_date).to_a.length
+	return price*num_date
+	end
+
+
 	# def check_max_guests
 	# 	max_guests = listing.guest_number
 	# 	return if   num_guests < max_guests
