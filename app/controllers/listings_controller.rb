@@ -11,6 +11,7 @@ class ListingsController < ApplicationController
 
   #get /listings/:listing_id
   def show
+    @booking = Booking.new
   end
 
   def new

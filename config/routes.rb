@@ -6,8 +6,12 @@ Rails.application.routes.draw do
   # get 'listings/create'
   resources :users, only: [:show, :edit, :update]
   # resources :shinos, except: [:show]
-  resources :listings
+  resources :listings do
+    resources :booking
+  end
   # , only: [:index, :show, :edit, :new, :create, :update, :destroy]
+  resources :bookings, only:  [:destroy]
+
 
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, controller: "clearance/sessions", only: [:create]
@@ -25,5 +29,6 @@ Rails.application.routes.draw do
 
   get "/auth/:provider/callback" => "sessions#create_from_omniauth"
   post "/listings/:id/verify", to: "listings#verify", as: "verify"
-  
+  post "/listings/:id/bookings", to: "bookings#create", as:"reservation"
+
 end
