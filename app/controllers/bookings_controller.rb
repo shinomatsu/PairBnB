@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
-  before_action :booking_params, only: [:edit, :update, :destroy]
+  before_action :require_login, only: [:show,:edit,:update,:destroy]
 
   # GET /bookings
   # GET /bookings.json
@@ -61,8 +61,8 @@ class BookingsController < ApplicationController
   def destroy
     @booking.destroy
     respond_to do |format|
-      format.html { redirect_to bookings_url, notice: 'Booking was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html { redirect_to @booking.user, notice: 'Booking was successfully destroyed.' }
+      format.json { render :show, head: :no_content }
     end
   end
 
