@@ -5,6 +5,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+#Ransack is a rewrite of MetaSearch
+gem 'ransack'
+
 gem 'fog'
 
 ## Gemfile for Rails 3+, Sinatra, and Merb

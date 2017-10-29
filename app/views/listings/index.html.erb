@@ -1,8 +1,5 @@
 <h2>All Listings</h2>
 
-<!--  seaching -->
-
-
 <!--  new_listing -->
 <div class="new_listing">
 <%= link_to 'New Listing', new_listing_path %>
@@ -14,6 +11,20 @@
 <%= sortable "num_of_rooms", "Our top Picks " %>
 <%= sortable "guest_number", "Review Score" %>
 </div>
+
+<!--  seaching -->
+
+
+
+<!--  seaching -->
+<%= form_for(@form, url: listings_path(@form), html: {method: "get"}) do |f| %>
+  <%= f.label :city %>
+  <%= f.collection_select :city, @listings, :city, :city %>
+  <%= f.submit'Search',:city => nil%>
+<% end %>
+
+
+
 
 <!--  all_listing -->
 <div class="all_listings">

@@ -8,9 +8,11 @@ class ListingsController < ApplicationController
 
   #get /listings
   def index
-  	@listings = Listing.all.order(sort_column + ' ' + sort_direction).paginate(:page => params[:page], :per_page => 15)
+    @form =Listing.new
+  	@listings = Listing.all.order(sort_column + ' ' + sort_direction).paginate(:page => params[:page], :per_page => 15).search(params[:city])
     # @users = User.all.order(:id)
   	# render :"index",layout:true
+
   end
 
   #get /listings/:listing_id
