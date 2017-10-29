@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
 	before_action :set_listing, only:[:show, :edit, :update, :destroy, :verify]
-	before_action :require_login, only: [:show,:edit,:update,:destroy]
+	before_action :require_login, only: [:edit,:update,:destroy]
 
 
   #get /listings
