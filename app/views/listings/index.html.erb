@@ -4,7 +4,16 @@
 
 
 <!--  new_listing -->
+<div class="new_listing">
 <%= link_to 'New Listing', new_listing_path %>
+</div>
+
+<!--  sort -->
+<div class="sortable_bar">
+<%= sortable "price", "Lowest Price First " %>
+<%= sortable "num_of_rooms", "Our top Picks " %>
+<%= sortable "guest_number", "Review Score" %>
+</div>
 
 <!--  all_listing -->
 <div class="all_listings">

@@ -1,11 +1,15 @@
 class ListingsController < ApplicationController
+  #sort_helper
+  helper_method :sort_column, :sort_direction
+
 	before_action :set_listing, only:[:show, :edit, :update, :destroy, :verify]
 	before_action :require_login, only: [:edit,:update,:destroy]
 
 
   #get /listings
   def index
-  	@listings = Listing.all.order(:id).paginate(:page => params[:page], :per_page => 15)
+  	@listings = Listing.all.order(sort_column + ' ' + sort_direction).paginate(:page => params[:page], :per_page => 15)
+    # @users = User.all.order(:id)
   	# render :"index",layout:true
   end
 
@@ -83,5 +87,13 @@ class ListingsController < ApplicationController
 		params.require(:listing).permit(:user,:title,:num_of_rooms,:description,:room_type,:price,:house_rules,:bed_number,:guest_number,:country,:state,:city,:zipcode,:address,photos: [])
 
 	end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
+  end
+ 
+  def sort_column
+      Listing.column_names.include?(params[:sort]) ? params[:sort] : "id"
+  end
 
 end
