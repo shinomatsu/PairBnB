@@ -12,21 +12,37 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+<body>
+<!-- navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-nav">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarEexample">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Bnb</a>
+    </div>
+    
+          <div class="collapse navbar-collapse" id="navbarEexample">
+            <ul class="nav navbar-nav">
+            <% if signed_in? -%>
+             <li><%= link_to t(".sign_out"), sign_out_path, method: :delete %></li>
+             <li><%= link_to "My page", user_path(current_user) %></li>
+             <li><%= link_to "Listing", listings_path %></li>
 
+              <% else -%>
+              <li><%= link_to t(".sign_up"), sign_up_path %></li>
+              <li><%= link_to t(".sign_in"), sign_in_path %></li>
+            
+          <% end -%>
 
-  <div id="header">
-    <% if signed_in? -%>
-      <%= link_to t(".sign_out"), sign_out_path, method: :delete %>
-      <%= link_to "My page", user_path(current_user) %>
-      <%= link_to "Home", listings_path %>
-
-    <% else -%>
-      <%= link_to t(".sign_up"), sign_up_path %>
-      <%= link_to t(".sign_in"), sign_in_path %>
-      
-    <% end -%>
+            </ul>
+      <div class="navbar-text navbar-right"><a href="#" class="navbar-link">Help</a></div>
   </div>
+</nav>
 
   <div id="flash">
     <% flash.each do |key, value| -%>

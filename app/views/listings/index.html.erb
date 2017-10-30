@@ -1,8 +1,28 @@
 <h2>All Listings</h2>
 
-
+<!--  new_listing -->
+<div class="new_listing">
 <%= link_to 'New Listing', new_listing_path %>
+</div>
 
+<!--  sort -->
+<div class="sortable_bar">
+<%= sortable "id", "Newest " %>
+<%= sortable "price", "Lowest Price First " %>
+<%= sortable "num_of_rooms", "Our top Picks " %>
+<%= sortable "guest_number", "Review Score" %>
+</div>
+
+<!--  seaching -->
+
+
+
+<!--  seaching -->
+<%= render 'search_form' %>
+
+
+
+<!--  all_listing -->
 <div class="all_listings">
 <table class= "table">
 
@@ -18,7 +38,7 @@
  <th>Price(RM)</th>
  <th>Description</th>
  <th>House Rules</th>
-<!--  <th>verification</th> -->
+
 
  </tr>
 
@@ -39,15 +59,23 @@
         <td><%= listing.house_rules %></td>
         <!-- <td><%= listing.verification %></td> -->
 
-
+        <!--  show,edit,destroy if you dont singned , display the erroer messeage -->
         <td><%= link_to 'Show', listing_path(listing) %></td>
+
         <td><%= link_to 'Edit?', edit_listing_path(listing) %></td>
         <td><%= link_to 'Destroy', listing_path(listing), method: :delete %></td>
-        <% if current_user.superadmin? || current_user.moderator? %>
-            <td>
-                <%= button_to "verify!", verify_path(listing) %>
-            </td>
+
+       <!--  verify -->
+        <% if signed_in? -%>
+            <% if current_user.superadmin? || current_user.moderator? %>
+                <td>
+                    <%= button_to "verify!", verify_path(listing) %>
+                </td>
+                
+            <% end %>
+            <% else %>
         <% end %>
+
        
       </tr>
     <% end %>

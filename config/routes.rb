@@ -31,4 +31,7 @@ Rails.application.routes.draw do
   post "/listings/:id/verify", to: "listings#verify", as: "verify"
   post "/listings/:id/bookings", to: "bookings#create", as:"reservation"
 
+  root to: 'lisitngs#index'
+  get 'search', to: 'listings#search'
+
 end
