@@ -1,21 +1,21 @@
 class Listing < ApplicationRecord
-	include ActiveModel::Model
+	# include ActiveModel::Model
 
 	belongs_to :user
 	has_many :bookings
 	
 	mount_uploaders :photos, PhotoUploader
-	
+	validates :city,presence: true
 
-
-
-	 def self.search(search) 
-	    if search 
-	      where(['city LIKE ?', "%#{search}%"])
-	    else
-	      all #全て表示。
-	    end
-	 end
+	# default_scope { order("updated_at DESC")}
+	# default_scope :by_newest
+	 # def self.search(search) 
+	 #    if search 
+	 #      where(['city LIKE ?', "%#{search}%"])
+	 #    else
+	 #      all #全て表示。
+	 #    end
+	 # end
 
 end
 

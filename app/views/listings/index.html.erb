@@ -7,6 +7,7 @@
 
 <!--  sort -->
 <div class="sortable_bar">
+<%= sortable "id", "Newest " %>
 <%= sortable "price", "Lowest Price First " %>
 <%= sortable "num_of_rooms", "Our top Picks " %>
 <%= sortable "guest_number", "Review Score" %>
@@ -17,12 +18,7 @@
 
 
 <!--  seaching -->
-<%= form_for(@form, url: listings_path(@form), html: {method: "get"}) do |f| %>
-  <%= f.label :city %>
-  <%= f.collection_select :city, @listings, :city, :city %>
-  <%= f.submit'Search',:city => nil%>
-<% end %>
-
+<%= render 'search_form' %>
 
 
 
