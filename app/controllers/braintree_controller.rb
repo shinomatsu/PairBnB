@@ -9,7 +9,7 @@ class BraintreeController < ApplicationController
 
   result = Braintree::Transaction.sale(
    :amount => "10.00", #this is currently hardcoded
-   :payment_method_nonce => nonce_from_the_client,
+   :payment_method_nonce => 'fake-valid-visa-nonce', #nonce_from_the_client,
    :options => {
       :submit_for_settlement => true
     }
