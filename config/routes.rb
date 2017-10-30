@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'braintree/new'
+
   resources :bookings
   root "listings#index"
   # get 'listings/index'
