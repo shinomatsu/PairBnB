@@ -36,4 +36,6 @@ Rails.application.routes.draw do
   root to: 'lisitngs#index'
   get 'search', to: 'listings#search'
 
+  post 'braintree/checkout'
+
 end
