@@ -6,7 +6,7 @@ class Booking < ApplicationRecord
 
 	def check_overlapping
 		self.listing.bookings.each  do |old_booking|
-			if overlap?(self,old_booking)
+			if overlap?(self,old_booking) && old_booking.id != self.id
 		    	errors.add(:overlapping_dates, "The booking dates confrict")
 		    	break
 		    end

@@ -1,18 +1,13 @@
 <!-- <p id="notice"><%= notice %></p> -->
 
-
+<br>
+<br>
 <div class="user_new_bookings">
 
     <p>
     <strong>Listing name:</strong>
     <%= @booking.listing.title %>
     </p>
-
-    <p>
-    <strong>Listing name:</strong>
-    <%= @booking.listing.title %>
-    </p>
-
 
     <p>
     <strong>Number of guests:</strong>
@@ -35,12 +30,17 @@
     <strong>Total price:</strong>
     <%= @booking.total_price %>
     </p>
+
+
   
 </div>
 
 
 
-
-<p><%= link_to "Payment procedures", braintree_new_path(@booking) %></p>
+<% if @booking.pay_status == false %>
+<p><strong>Payment status:</strong> <%= link_to "Payment procedures", braintree_new_path(@booking) %></p>
+<% else %>
+<p><strong>Payment status:</strong> finished</p>
+<%  end %>
 
 <p><%= link_to 'Back', listings_path %></p>
