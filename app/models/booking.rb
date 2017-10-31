@@ -5,7 +5,7 @@ class Booking < ApplicationRecord
 	#validate :check_max_guests
 
 	def check_overlapping
-		listing.bookings.each  do |old_booking|
+		self.listing.bookings.each  do |old_booking|
 			if overlap?(self,old_booking)
 		    	errors.add(:overlapping_dates, "The booking dates confrict")
 		    	break
@@ -18,7 +18,7 @@ class Booking < ApplicationRecord
 	end
 
 	def total_price
-		price = listing.price
+		price = self.listing.price #self is the booking object, self.listing
 		num_date = (start_date..end_date).to_a.length
 	return price*num_date
 	end

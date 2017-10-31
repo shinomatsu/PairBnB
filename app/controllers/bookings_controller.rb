@@ -5,7 +5,8 @@ class BookingsController < ApplicationController
   # GET /bookings
   # GET /bookings.json
   def index
-    @bookings = Booking.all
+    @listing = Listing.find(params[:listing_id])
+    @bookings =@listing.bookings
   end
 
   # GET /bookings/1
@@ -15,21 +16,23 @@ class BookingsController < ApplicationController
 
   # GET /bookings/new
   def new
+    @listing = Listing.find(params[:listing_id])
     @booking = Booking.new
   end
 
   # GET /bookings/1/edit
   def edit
+     @listing = Listing.find(params[:listing_id])
   end
 
   # POST /bookings
   # POST /bookings.json
   def create
-  
-    @listing =Listing.find(params[:id])
+
+    @listing =Listing.find(params[:listing_id])
     @booking = current_user.bookings.new(booking_params)
     @booking.listing_id = @listing.id
-#byebug
+# byebug
       if @booking.save
         respond_to do |format|
           format.html { redirect_to @booking, notice: 'Booking was successfully updated.' }
