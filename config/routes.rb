@@ -1,17 +1,8 @@
 Rails.application.routes.draw do
-  resources :bookings
+  
   root "listings#index"
-  # get 'listings/index'
-  # get 'listings/show'
-  # get 'listings/create'
-  resources :users, only: [:show, :edit, :update]
-  # resources :shinos, except: [:show]
-  resources :listings do
-    resources :booking
-  end
-  # , only: [:index, :show, :edit, :new, :create, :update, :destroy]
-  resources :bookings, only:  [:destroy]
 
+#------clearance
 
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, controller: "clearance/sessions", only: [:create]
@@ -27,11 +18,32 @@ Rails.application.routes.draw do
   get "/sign_up" => "clearance/users#new", as: "sign_up"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  get "/auth/:provider/callback" => "sessions#create_from_omniauth"
-  post "/listings/:id/verify", to: "listings#verify", as: "verify"
-  post "/listings/:id/bookings", to: "bookings#create", as:"reservation"
+#----clearance
 
-  root to: 'lisitngs#index'
+
+
+  resources :listings
+
+  resources :users, only: [:show, :edit, :update]
+  # resources :shinos, except: [:show]
+  resources :listings do
+    resources :bookings, only: [:index, :new, :create]
+  end
+  # , only: [:index, :show, :edit, :new, :create, :update, :destroy]
+  resources :bookings, only:  [:show, :edit, :update, :destroy]
+
+
+
+  get "/auth/:provider/callback" => "sessions#create_from_omniauth"
+  
+  post "/listings/:id/verify", to: "listings#verify", as: "verify"
+  
+
+
   get 'search', to: 'listings#search'
+
+  post '/bookings/:id/braintree/checkout', to: "braintree#checkout", as: "braintree_checkout"
+
+  get '/bookings/:id/braintree/new', to: "braintree#new", as: "braintree_new"
 
 end

@@ -1,3 +1,46 @@
 <!-- <p id="notice"><%= notice %></p> -->
 
-<%= link_to 'Back', listings_path %>
+<br>
+<br>
+<div class="user_new_bookings">
+
+    <p>
+    <strong>Listing name:</strong>
+    <%= @booking.listing.title %>
+    </p>
+
+    <p>
+    <strong>Number of guests:</strong>
+    <%= @booking.no_of_guests %>
+    </p>
+
+
+    <p>
+    <strong>Start date:</strong>
+    <%= @booking.start_date %>
+    </p>
+
+
+    <p>
+    <strong>End date:</strong>
+    <%= @booking.end_date %>
+    </p>
+
+    <p>
+    <strong>Total price:</strong>
+    <%= @booking.total_price %>
+    </p>
+
+
+  
+</div>
+
+
+
+<% if @booking.pay_status == false %>
+<p><strong>Payment status:</strong> <%= link_to "Payment procedures", braintree_new_path(@booking) %></p>
+<% else %>
+<p><strong>Payment status:</strong> finished</p>
+<%  end %>
+
+<p><%= link_to 'Back', listings_path %></p>

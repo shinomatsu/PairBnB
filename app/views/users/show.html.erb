@@ -33,12 +33,17 @@
 <%= link_to "Edit?", edit_user_path %>
 </div>
 
+<p></p>
+
 <!-- edit user's reservation-->
+ <p><strong>My booking </strong></p>
 <div class="user_bookings">
-    <%  if @bookings == true   %>
+    
             <table>
             <tr>
                 <td>Listing name</td>
+                <td>Booking ID</td>
+                <td>Bookinged date</td>
                 <td>Start_date</td>
                 <td>End_date</td>
                 <td>Number of guests</td>
@@ -47,11 +52,14 @@
                 <% @bookings.each do |booking|%>
                 <tr>
                 <td><%= link_to booking.listing.title, booking.listing %></td>
+                <td><%= link_to "#{booking.id}" , booking %></td>
+                <td><%= booking.updated_at %></td>
                 <td><%= booking.start_date %></td>
                 <td><%= booking.end_date %></td>
                 <td><%= booking.no_of_guests %></td>
                 <td><%= booking.total_price %></td>
-                <td><%= link_to "Cansel bookig", booking, method: :delete %></td>
+
+                <td><%= link_to "Cansel booking", booking, method: :delete %></td>
 
 
 
@@ -60,7 +68,7 @@
                     
             </table>
 
-    <% end %>
+  
 </div>
 
 

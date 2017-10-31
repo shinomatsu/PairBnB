@@ -3,6 +3,7 @@ class Listing < ApplicationRecord
 
 	belongs_to :user
 	has_many :bookings
+	# , many to one booking.listing
 	
 	mount_uploaders :photos, PhotoUploader
 	validates :city,presence: true

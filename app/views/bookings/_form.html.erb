@@ -1,6 +1,6 @@
 
 <div class="actions">
-<%= form_for @booking, url: reservation_path(@listing) do |form| %>
+<%= form_for [@listing,@booking] do |form| %>
     <% if @booking.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@booking.errors.count, "error") %> prohibited this booking from being saved:</h2>

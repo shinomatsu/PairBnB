@@ -3,3 +3,6 @@ class AddbooleanToListings < ActiveRecord::Migration[5.1]
   	add_column :listings, :verification, :boolean, default: false, null: false
   end
 end
+
+
+ 
