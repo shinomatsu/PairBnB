@@ -5,6 +5,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+#active job
+gem 'sidekiq'
+
 #braintree 
 gem 'braintree'
 
