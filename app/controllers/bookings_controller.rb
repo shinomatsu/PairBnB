@@ -35,7 +35,7 @@ class BookingsController < ApplicationController
     @host = "pairbnbtesttest@gmail.com"
 # byebug
       if @booking.save
-        ReservationMailer.notification_email(current_user.email, @host, @booking.listing.id, @booking.id).deliver_later
+        ReservationJob.perform_later(current_user.email, @host, @booking.listing.id, @booking.id)
         respond_to do |format|
           format.html { redirect_to @booking, notice: 'Booking was successfully updated.' }
           format.json { render :show, status: :ok, location: @booking }
