@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  root "listings#index"
+  root "hello#index"
 
 #------clearance
 
