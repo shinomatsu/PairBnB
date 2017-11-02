@@ -1,2 +1,55 @@
 
-<h2>Hello</h2>
+<div class="main">
+<!-- title -->
+<div class="title"><h2>PairBnb</h2></div>
+
+<!-- seach form-->
+<div class="container_seach">
+<%= form_tag listings_path, :method => 'get' do %>
+  <%= text_field_tag :search %>
+  <%= submit_tag 'Search', :listings => nil %>
+ 
+<% end %>
+</div>
+
+<!-- image listing -->
+<div class="main_listing_1">
+    <div class="row">
+	  <div class="col-md-4">
+	    <div class="thumbnail">
+	      <a href="#">
+	        <img src="/assets/242200.png" alt="Lights" style="width:100%">
+	        <div class="caption">
+	          <p>Lorem ipsum...</p>
+	        </div>
+	      </a>
+	    </div>
+	  </div>
+	  <div class="col-md-4">
+	    <div class="thumbnail">
+	      <a href="#">
+	        <img src="/assets/242200.png" alt="Nature" style="width:100%">
+	        <div class="caption">
+	          <p>Lorem ipsum...</p>
+	        </div>
+	      </a>
+	    </div>
+	  </div>
+	  <div class="col-md-4">
+	    <div class="thumbnail">
+	      <a href="#">
+	        <img src="/assets/242200.png" alt="Fjords" style="width:100%">
+	        <div class="caption">
+	          <p>Lorem ipsum...</p>
+	        </div>
+	      </a>
+	    </div>
+      </div>
+    </div>
+</div>
+
+
+	
+</div>
+
+

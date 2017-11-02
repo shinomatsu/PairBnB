@@ -10,7 +10,7 @@ class ListingsController < ApplicationController
   def index
     @q = Listing.ransack(params[:q])
 
-  	@listings = Listing.all.order(sort_column + ' ' + sort_direction).paginate(:page => params[:page], :per_page => 15)
+  	@listings = Listing.all.order(sort_column + ' ' + sort_direction).paginate(:page => params[:page], :per_page => 15).search(params[:search])
     # @users = User.all.order(:id)
   	# render :"index",layout:true
 
@@ -57,6 +57,7 @@ class ListingsController < ApplicationController
     if @listing.update(listing_params)
       redirect_to @listing
     else
+      p @listing.errors
       render :edit
     end
   	

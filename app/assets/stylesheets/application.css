@@ -17,9 +17,107 @@
  body { 
  	padding-top: 30px; 
  }
-
+/*　submit*/
  .submit-field {
  	padding-top: 15px;
  	padding-bottom: 15px;
  }
 
+/* navbar*/
+.navbar-link{
+	padding-right: 30px;
+
+}
+
+/*form*/
+.container_form {
+ 	padding-top: 15px;
+ 	padding-bottom: 15px;
+ }
+
+/*hello index title*/
+
+ .title{
+    text-align: center;  
+    margin: 30px;
+	padding: 15px;
+	
+}
+
+/*hello index thumnail*/
+.row {
+	display: flex;
+	justify-content:         space-around;
+	margin: 10px;
+}
+.row section {
+  margin: 10px;
+  border-radius: 5px;
+  padding: 15px;
+  flex: 1;
+}
+
+/*hellp indec seachform*/
+.container_seach{
+    align-items: center;
+	display: flex;
+	margin: 30px;
+	padding: 15px;
+	justify-content: center;
+
+}
+
+/*hellp indec seachform*/
+.new_listing{
+	padding-top: 15px;
+	padding-right: 15px;
+	padding-bottom: 15px;
+
+}
+
+/*listing show carousel bannar*/
+
+.carousel-inner img{
+    width: 100%;  
+    height: auto;
+	
+
+}
+
+/*listing index sortbar*/
+
+.sortable_bar{
+    padding-top:  10px;
+    padding-bottom:  10px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+.all_listings{
+    padding:  15px;
+}
+
+/*listing index thumbnail*/
+.container {
+    padding-right: 10px;
+    padding-left:  10px;
+    padding-bottom:  10px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.thumbnail {
+    position: relative;
+    padding: 0px;
+    margin-bottom: 20px;
+}
+
+/*.thumbnail img {
+    width: 100%;
+}
+*/
+
+
+
+ 

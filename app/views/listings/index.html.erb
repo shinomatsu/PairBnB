@@ -5,7 +5,10 @@
 <%= link_to 'New Listing', new_listing_path %>
 </div>
 
-<!--  sort -->
+<!--  seaching -->
+ <%= render 'search_form' %>
+
+ <!--  sort -->
 <div class="sortable_bar">
 <%= sortable "id", "Newest " %>
 <%= sortable "price", "Lowest Price First " %>
@@ -13,17 +16,42 @@
 <%= sortable "guest_number", "Review Score" %>
 </div>
 
-<!--  seaching -->
-
-
-
-<!--  seaching -->
-<%= render 'search_form' %>
-
-
-
-<!--  all_listing -->
+<!-- alllisting_2 -->
 <div class="all_listings">
+
+<div class="container" id="tourpackages-carousel">
+     <% @listings.each_slice(3) do |listings| %>
+      
+      <div class="row">
+        <% listings.each do |listing| %>
+        
+        <section class="col-xs-18 col-sm-6 col-md-3">
+          <div class="thumbnail">
+            <% if listing.photos? %> 
+                <%= link_to (image_tag listing.photos[0].small,:class => "thum"),listing_path(listing) %>
+            <% else %>
+                <%= link_to (image_tag "/assets/242200.png",:class => "thum" ),listing_path(listing)%>  
+            <% end %>
+
+            <div class="caption">
+            <p>City/<td><%= listing.city %></td></p>
+            <p>Propaty type/<td><%= listing.room_type %></td></p>
+            <p>Price(RM)/<td><%= listing.price %></td></p>
+                
+            </div>
+          </div>
+        </section>
+        <% end %>
+      </div><!-- End row -->
+     <% end %>
+    </div><!-- End container -->
+
+
+</div>
+
+<!-- alllisting2 -->
+<!--  all_listing -->
+<!-- <div class="all_listings">
 <table class= "table">
 
 <thead>
@@ -58,14 +86,14 @@
         <td><%= listing.description %></td>
         <td><%= listing.house_rules %></td>
         <!-- <td><%= listing.verification %></td> -->
-
-        <!--  show,edit,destroy if you dont singned , display the erroer messeage -->
+<!-- 
+        show,edit,destroy if you dont singned , display the erroer messeage
         <td><%= link_to 'Show', listing_path(listing) %></td>
 
         <td><%= link_to 'Edit?', edit_listing_path(listing) %></td>
         <td><%= link_to 'Destroy', listing_path(listing), method: :delete %></td>
 
-       <!--  verify -->
+       verify
         <% if signed_in? -%>
             <% if current_user.superadmin? || current_user.moderator? %>
                 <td>
@@ -82,6 +110,12 @@
   </tbody>
 
 </table>
-</div>
+</div> --> 
 
 <%= will_paginate @listings %>
+
+    
+
+
+
+
