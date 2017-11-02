@@ -43,6 +43,12 @@
   <%= form.password_field :password %>
 </div>
 
+<!-- photos-->
+<div class="photos">
+  <%= form.label :photos %>
+  <%= form.file_field :photos, multiple: true %>
+</div>
+
 <div class="submit-field">
   <%= form.submit %>
 </div>
