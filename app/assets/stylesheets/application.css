@@ -44,8 +44,15 @@
 	
 }
 
+.sub{
+  text-align: center;  
+    margin: 10px;
+  padding: 10px;
+
+}
+
 /*hello index thumnail*/
-.row {
+./*row {
 	display: flex;
 	justify-content:         space-around;
 	margin: 10px;
@@ -55,17 +62,18 @@
   border-radius: 5px;
   padding: 15px;
   flex: 1;
-}
+}*/
 
 /*hellp indec seachform*/
 .container_seach{
     align-items: center;
 	display: flex;
-	margin: 30px;
-	padding: 15px;
+	margin: 10px;
+	padding: 10px;
 	justify-content: center;
 
 }
+
 
 /*hellp indec seachform*/
 .new_listing{
@@ -115,7 +123,6 @@
 
 /*.footer*/
 
-
 #social-fb:hover {
      color: #3B5998;
  }
@@ -128,6 +135,11 @@
  #social-em:hover {
      color: #f39c12;
  }
+
+ .row-eq-height {
+    display: flex;
+    flex-wrap: wrap;
+}
 
 
 

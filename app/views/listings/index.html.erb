@@ -1,3 +1,5 @@
+<div class="container">
+
 <h2>All Listings</h2>
 
 <!--  new_listing -->
@@ -5,8 +7,15 @@
 <%= link_to 'New Listing', new_listing_path %>
 </div>
 
-<!--  seaching -->
- <%= render 'search_form' %>
+<!--  render 'search_form' -->
+  
+    <%= form_tag(listings_path, class: 'form-inline', :method => "get") do %>
+      <%= text_field_tag :country, params[:country], placeholder: "Anywhere", class:'form-control col-lg-6'%>
+      <%= number_field_tag :guest_number ,params[:guest_number], placeholder: "Number of people", class:'form-control col-lg-6'%>
+      <%= submit_tag "Search", class:'btn btn-secondary', style:'display: inline;'%>
+    <% end %>
+
+<!--  <%=  %> -->
 
  <!--  sort -->
 <div class="sortable_bar">
@@ -19,13 +28,13 @@
 <!-- alllisting_2 -->
 <div class="all_listings">
 
-<div class="container" id="tourpackages-carousel">
+<div  id="tourpackages-carousel">
      <% @listings.each_slice(3) do |listings| %>
       
       <div class="row">
         <% listings.each do |listing| %>
         
-        <section class="col-xs-18 col-sm-6 col-md-3">
+        <section class="col-xs-18 col-sm-6 col-md-4">
           <div class="thumbnail">
             <% if listing.photos? %> 
                 <%= link_to (image_tag listing.photos[0].small,:class => "thum"),listing_path(listing) %>
@@ -34,6 +43,7 @@
             <% end %>
 
             <div class="caption">
+            <p>Country/<td><%= listing.country %></td></p>
             <p>City/<td><%= listing.city %></td></p>
             <p>Propaty type/<td><%= listing.room_type %></td></p>
             <p>Price(RM)/<td><%= listing.price %></td></p>
@@ -85,7 +95,7 @@
         <td><%= listing.price %></td>
         <td><%= listing.description %></td>
         <td><%= listing.house_rules %></td>
-        <!-- <td><%= listing.verification %></td> -->
+        <!<td><%= listing.verification %></td> -->
 <!-- 
         show,edit,destroy if you dont singned , display the erroer messeage
         <td><%= link_to 'Show', listing_path(listing) %></td>
@@ -112,7 +122,9 @@
 </table>
 </div> --> 
 
+
 <%= will_paginate @listings %>
+</div>
 
     
 

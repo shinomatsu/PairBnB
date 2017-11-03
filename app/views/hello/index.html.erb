@@ -6,13 +6,24 @@
 </div>
 
 <!-- seach form-->
-<div class="container_seach">
+<div class="sub">where will you go?</div>
+<!-- <div class="container_seach">
 <%= form_tag listings_path, :method => 'get' do %>
-  <%= text_field_tag :search %>
+  <%= text_field_tag :country %>
+  <%= number_field_tag :guest_number %>
   <%= submit_tag 'Search', :listings => nil %>
  
 <% end %>
-</div>
+</div> -->
+<!-- search form -->
+    <div class="container_seach">
+    <%= form_tag(listings_path, class: 'form-inline', :method => "get") do %>
+      <%= text_field_tag :country, params[:country], placeholder: "Anywhere", class:'form-control col-lg-6'%>
+      <%= number_field_tag :guest_number ,params[:guest_number], placeholder: "Number of people", class:'form-control col-lg-6'%>
+      <%= submit_tag "Search", class:'btn btn-secondary', style:'display: inline;'%>
+    <% end %>
+  </div>
+
 
 <!-- image listing -->
 <div class="main_listing_1">

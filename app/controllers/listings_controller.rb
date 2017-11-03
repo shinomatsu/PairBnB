@@ -8,22 +8,27 @@ class ListingsController < ApplicationController
 
   #get /listings
   def index
-    @q = Listing.ransack(params[:q])
+    # byebug
+    # @q = Listing.ransack(params[:q])
+  @listings = Listing.search_with_country(params[:country]).search_with_numeber(params[:guest_number])
+  # @listings = Listing
 
-  	@listings = Listing.all.order(sort_column + ' ' + sort_direction).paginate(:page => params[:page], :per_page => 15).search(params[:search])
+  @listings = @listings.order(sort_column + ' ' + sort_direction).paginate(:page => params[:page], :per_page => 15)
+
+  	# @listings = Listing.all.order(sort_column + ' ' + sort_direction).paginate(:page => params[:page], :per_page => 15).search_with_country(params[:country])
     # @users = User.all.order(:id)
   	# render :"index",layout:true
 
   end
 
   #get search
-  def search
-    @q = Listing.ransack(params[:q])
-    @listings = Listing.where(city: params[:q][:city])
-    @listings = @listings.order(sort_column + ' ' + sort_direction).paginate(:page => params[:page], :per_page => 15)
+  # def search
+  #   @q = Listing.ransack(params[:q])
+  #   @listings = Listing.where(country: params[:q][:country])
+  #   @listings = @listings.order(sort_column + ' ' + sort_direction).paginate(:page => params[:page], :per_page => 15)
 
-    render :index
-  end
+  #   render :index
+  # end
 
 
   #get /listings/:listing_id
