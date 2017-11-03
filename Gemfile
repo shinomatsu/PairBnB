@@ -5,6 +5,12 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+group :production do
+  gem 'rails_12factor', '0.0.2'
+  #use unicorn as app server
+  gem 'unicorn'
+end
+
 #active job
 gem 'sidekiq'
 
