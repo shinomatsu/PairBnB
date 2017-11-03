@@ -2,39 +2,48 @@
 <br>
 <br>
 
+<!-- aaa -->
+<div class="container">    
+                  <div class="row">
+                      <div class="panel panel-default">
+                       <div class="panel-body">
+                      <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
+                       <%= link_to (image_tag @user.photos[0].small,:class =>"img-circle",:id =>"profile-image1") %>
 
-    <p>
-    <strong>Name:</strong>
-    <%= @user.first_name %> <%= @user.last_name %>
-    </p>
+                      </div>
+                      <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8" >
+                          <div class="container" >
+                          </div>
+                    
+                          <ul class="container details" >
+                             <p><h4><%= @user.first_name %> <%= @user.last_name %></h4><p>
+                             <p>
+                                <strong>Country:</strong>
+                                <%= @user.country %>
+                            </p>
 
-    <p>
-    <strong>Country:</strong>
-    <%= @user.country %>
-    </p>
+                            <p>
+                                <strong>Gender:</strong>
+                                <%= @user.gender %>
+                            </p>
 
-    <p>
-    <strong>Gender:</strong>
-    <%= @user.gender %>
-    </p>
+                            <p>
+                                <strong>Email:</strong>
+                                <%= @user.email %>
+                            </p>
 
-    <p>
-    <strong>Email:</strong>
-    <%= @user.email %>
-    </p>
-
-    <p>
-    <strong>Phone:</strong>
-    <%= @user.phone %>
-    </p>
-
-<!-- edit user's profile-->
-<div>
-<%= link_to "Edit?", edit_user_path %>
-</div>
-
-<p></p>
-
+                            <p>
+                                <strong>Phone:</strong>
+                                <%= @user.phone %>
+                            </p>
+                            <!-- edit user's profile-->
+                            <div>
+                            <%= link_to "Edit?", edit_user_path %>
+                            </div>
+                      </div>
+                </div>
+            </div>
+            </div>
 <!-- edit user's reservation-->
  <p><strong>My booking </strong></p>
 <div class="user_bookings">
@@ -48,6 +57,7 @@
                 <td>End_date</td>
                 <td>Number of guests</td>
                 <td>Total</td>
+                <td>Status</td>
             </tr>
                 <% @bookings.each do |booking|%>
                 <tr>
@@ -59,7 +69,7 @@
                 <td><%= booking.no_of_guests %></td>
                 <td><%= booking.total_price %></td>
 
-                <td><%= link_to "Cansel booking", booking, method: :delete %></td>
+                <td><%= link_to "Cansel booking?", booking, method: :delete %></td>
 
 
 

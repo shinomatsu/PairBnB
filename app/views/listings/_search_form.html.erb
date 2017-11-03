@@ -1,5 +1,5 @@
 <%=  search_form_for(@q, url: search_path) do |f| %>
-  <%= f.label :"which select is city?"%>
-  <%= f.collection_select :city, Listing.all, :city, :city %>
+  <%= f.label :"which select is coutnry?"%>
+  <%= f.collection_select :country, Listing.all, :country, :country %>
   <%= f.submit'Search'%>
 <% end %>

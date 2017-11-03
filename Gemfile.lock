@@ -55,7 +55,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    carrierwave (1.0.0)
+    carrierwave (1.2.1)
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
@@ -73,6 +73,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
+    connection_pool (2.2.1)
     crass (1.0.2)
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
@@ -300,6 +301,8 @@ GEM
     public_suffix (3.0.0)
     puma (3.10.0)
     rack (2.0.3)
+    rack-protection (2.0.0)
+      rack
     rack-test (0.7.0)
       rack (>= 1.0, < 3)
     rails (5.1.4)
@@ -343,6 +346,7 @@ GEM
       json (>= 1.8)
       nokogiri (~> 1.5)
       trollop (~> 2.1)
+    redis (4.0.1)
     rest-client (2.0.2)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
@@ -363,6 +367,11 @@ GEM
     selenium-webdriver (3.6.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.0)
+    sidekiq (5.0.5)
+      concurrent-ruby (~> 1.0)
+      connection_pool (~> 2.2, >= 2.2.0)
+      rack-protection (>= 1.5.0)
+      redis (>= 3.3.4, < 5)
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -382,7 +391,7 @@ GEM
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
     turbolinks-source (5.0.3)
-    tzinfo (1.2.3)
+    tzinfo (1.2.4)
       thread_safe (~> 0.1)
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
@@ -409,7 +418,7 @@ DEPENDENCIES
   braintree
   byebug
   capybara (~> 2.13)
-  carrierwave (~> 1.0.0)
+  carrierwave
   clearance
   coffee-rails (~> 4.2)
   faker
@@ -426,6 +435,7 @@ DEPENDENCIES
   ransack
   sass-rails (~> 5.0)
   selenium-webdriver
+  sidekiq
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)

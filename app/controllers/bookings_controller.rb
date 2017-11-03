@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
-  before_action :require_login, only: [:show,:edit,:update,:destroy]
+  before_action :require_login, only: [:create,:show,:edit,:update,:destroy]
 
   # GET /bookings
   # GET /bookings.json
@@ -28,12 +28,14 @@ class BookingsController < ApplicationController
   # POST /bookings
   # POST /bookings.json
   def create
-
+#byebug
     @listing =Listing.find(params[:listing_id])
     @booking = current_user.bookings.new(booking_params)
     @booking.listing_id = @listing.id
-# byebug
+    @host = "pairbnbtesttest@gmail.com"
+
       if @booking.save
+        ReservationJob.perform_later(current_user.email, @host, @booking.listing.id, @booking.id)
         respond_to do |format|
           format.html { redirect_to @booking, notice: 'Booking was successfully updated.' }
           format.json { render :show, status: :ok, location: @booking }
