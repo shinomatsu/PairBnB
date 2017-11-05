@@ -141,6 +141,45 @@
     flex-wrap: wrap;
 }
 
+.carousel-inner img{
+    width: 100%;  
+    height: auto;
+  
+
+}
+
+.sortable_bar{
+    padding-top:  10px;
+    padding-bottom:  10px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+.all_listings{
+    padding:  15px;
+}
+
+
+.container {
+    padding-right: 50px;
+    padding-left:  50px;
+    padding-bottom:  50px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.thumbnail {
+    position: relative;
+    padding: 0px;
+    margin-bottom: 20px;
+}
+
+.thumbnail img {
+    width: 100%;
+}
+
+
 
 
  
