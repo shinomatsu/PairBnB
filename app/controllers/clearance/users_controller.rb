@@ -19,7 +19,7 @@ class Clearance::UsersController < Clearance::BaseController
 
     if @user.save
       sign_in @user
-      redirect_back_or url_after_create
+      redirect_back_or edit_user_path(@user)
     else
       render template: "users/new"
     end
@@ -45,7 +45,9 @@ class Clearance::UsersController < Clearance::BaseController
     Clearance.configuration.redirect_url
   end
 
+
   def user_from_params
+
     first_name = user_params.delete(:first_name)
     last_name = user_params.delete(:last_name)
     email = user_params.delete(:email)

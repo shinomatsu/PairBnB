@@ -3,25 +3,25 @@
 <!-- first_name_form -->
 <div class="text-field">
   <%= form.label :first_name %>
-  <%= form.text_field :first_name, type: 'first_name' %>
+  <%= form.text_field :first_name %>
 </div>
 
 <!-- last_name_form -->
 <div class="text-field">
   <%= form.label :last_name %>
-  <%= form.text_field :last_name, type: 'last_name' %>
+  <%= form.text_field :last_name %>
 </div>
 
 <!-- gender_form -->
 <div class="text-field">
   <%= form.label :gender %>
-  <%= form.text_field :gender, type: 'gender' %>
+  <%= form.text_field :gender %>
 </div>
 
 <!-- country_form -->
 <div class="text-field">
   <%= form.label :country %>
-  <%= form.text_field :country, type: 'country' %>
+  <%= form.text_field :country %>
 </div>
 
 
@@ -34,7 +34,7 @@
 <!-- phone_form -->
 <div class="text-field">
   <%= form.label :phone %>
-  <%= form.text_field :phone, type: 'phone' %>
+  <%= form.text_field :phone %>
 </div>
 
 <!-- password_form -->
@@ -43,11 +43,8 @@
   <%= form.password_field :password %>
 </div>
 
-<!-- photos-->
-<div class="photos">
-  <%= form.label :photos %>
-  <%= form.file_field :photos, multiple: true %>
-</div>
+
+
 
 <div class="submit-field">
   <%= form.submit %>

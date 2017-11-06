@@ -8,8 +8,9 @@
                       <div class="panel panel-default">
                        <div class="panel-body">
                       <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
-                       <%= link_to (image_tag @user.photos[0].small,:class =>"img-circle",:id =>"profile-image1") %>
-
+                      <% if @user.photos.length > 0 %>
+                       <%= link_to (image_tag @user.photos[0].small.url,:class =>"img-circle",:id =>"profile-image1") %>
+                       <% end %>
                       </div>
                       <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8" >
                           <div class="container" >

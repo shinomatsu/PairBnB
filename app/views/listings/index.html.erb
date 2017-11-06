@@ -39,7 +39,7 @@
             <% if listing.photos? %> 
                 <%= link_to (image_tag listing.photos[0].small,:class => "thum"),listing_path(listing) %>
             <% else %>
-                <%= link_to (image_tag "/assets/242200.png",:class => "thum" ),listing_path(listing)%>  
+                <%= link_to (image_tag '242200.png',:class => "thum" ),listing_path(listing)%>  
             <% end %>
 
             <div class="caption">

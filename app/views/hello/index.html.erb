@@ -7,15 +7,7 @@
 
 <!-- seach form-->
 <div class="sub">where will you go?</div>
-<!-- <div class="container_seach">
-<%= form_tag listings_path, :method => 'get' do %>
-  <%= text_field_tag :country %>
-  <%= number_field_tag :guest_number %>
-  <%= submit_tag 'Search', :listings => nil %>
- 
-<% end %>
-</div> -->
-<!-- search form -->
+
 
 <!-- image listing -->
 <div class="main_listing_1">
@@ -23,10 +15,17 @@
 	  <div class="col-md-4">
 	    <div class="thumbnail">
 	      <a href="#">
-	      	<%= image_tag '242200.png', alt:'Lights', width: 100 %>
-	        <!-- <img src="/assets/242200.png" alt="Lights" style="width:100%"> -->
+	      	<%= image_tag 'tokyo.jpg', alt:'Lights', :width => '138', :height => '37' %>
+	        <div class="caption">         
+	        </div>
+	      </a>
+	    </div>
+	  </div>
+	  <div class="col-md-4">
+	    <div class="thumbnail">
+	      <a href="#">
+	        <%= image_tag 'shutterstock.jpg', alt:'Lights', width: 100, height:'100px' %>
 	        <div class="caption">
-	          <p>Tokyo</p>
 	         
 	        </div>
 	      </a>
@@ -35,19 +34,9 @@
 	  <div class="col-md-4">
 	    <div class="thumbnail">
 	      <a href="#">
-	        <img src="/assets/242200.png" alt="Nature" style="width:100%">
+	        <%= image_tag 'is.jpg', alt:'Lights', width: 100, height:'100px' %>
 	        <div class="caption">
-	          <p>Egypt</p>
-	        </div>
-	      </a>
-	    </div>
-	  </div>
-	  <div class="col-md-4">
-	    <div class="thumbnail">
-	      <a href="#">
-	        <img src="/assets/242200.png" alt="Fjords" style="width:100%">
-	        <div class="caption">
-	          <p>Ísland</p>
+	          
 	        </div>
 	      </a>
 	    </div>
