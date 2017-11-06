@@ -1,0 +1,410 @@
+/* line 1, /Users/shinomatsuoka/Desktop/PairBnB/app/assets/stylesheets/braintree.scss */
+.hosted-field {
+  height: 50px;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px;
+  display: inline-block;
+  box-shadow: none;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #dddddd;
+  line-height: 20px;
+  background: #fcfcfc;
+  margin-bottom: 12px;
+  background: linear-gradient(to right, white 50%, #fcfcfc 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all 300ms ease-in-out;
+}
+
+/* line 21, /Users/shinomatsuoka/Desktop/PairBnB/app/assets/stylesheets/braintree.scss */
+.hosted-fields--label {
+  font-family: courier, monospace;
+  text-transform: uppercase;
+  font-size: 14px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* line 29, /Users/shinomatsuoka/Desktop/PairBnB/app/assets/stylesheets/braintree.scss */
+.button-container {
+  display: block;
+  text-align: center;
+}
+
+/* line 34, /Users/shinomatsuoka/Desktop/PairBnB/app/assets/stylesheets/braintree.scss */
+.button {
+  cursor: pointer;
+  font-weight: 500;
+  line-height: inherit;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 3px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: inline-block;
+}
+
+/* line 49, /Users/shinomatsuoka/Desktop/PairBnB/app/assets/stylesheets/braintree.scss */
+.button--small {
+  padding: 10px 20px;
+  font-size: 0.875rem;
+}
+
+/* line 54, /Users/shinomatsuoka/Desktop/PairBnB/app/assets/stylesheets/braintree.scss */
+.button--green {
+  outline: none;
+  background-color: #64d18a;
+  border-color: #64d18a;
+  color: white;
+  transition: all 200ms ease;
+}
+
+/* line 62, /Users/shinomatsuoka/Desktop/PairBnB/app/assets/stylesheets/braintree.scss */
+.button--green:hover {
+  background-color: #8bdda8;
+  color: white;
+}
+
+/* line 67, /Users/shinomatsuoka/Desktop/PairBnB/app/assets/stylesheets/braintree.scss */
+.braintree-hosted-fields-focused {
+  border: 1px solid #64d18a;
+  border-radius: 1px;
+  background-position: left bottom;
+}
+
+/* line 73, /Users/shinomatsuoka/Desktop/PairBnB/app/assets/stylesheets/braintree.scss */
+.braintree-hosted-fields-invalid {
+  border: 1px solid #ed574a;
+}
+
+/* line 80, /Users/shinomatsuoka/Desktop/PairBnB/app/assets/stylesheets/braintree.scss */
+#cardForm {
+  max-width: 50.75em;
+  margin: 0 auto;
+  padding: 1.875em;
+}
+/* line 4, /Users/shinomatsuoka/Desktop/PairBnB/app/assets/stylesheets/listings.scss */
+.carousel-inner img {
+  width: 100%;
+  height: auto;
+}
+
+/* line 11, /Users/shinomatsuoka/Desktop/PairBnB/app/assets/stylesheets/listings.scss */
+.sortable_bar {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* line 19, /Users/shinomatsuoka/Desktop/PairBnB/app/assets/stylesheets/listings.scss */
+.all_listings {
+  padding: 15px;
+}
+
+/* line 24, /Users/shinomatsuoka/Desktop/PairBnB/app/assets/stylesheets/listings.scss */
+.container {
+  padding-right: 50px;
+  padding-left: 50px;
+  padding-bottom: 50px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* line 32, /Users/shinomatsuoka/Desktop/PairBnB/app/assets/stylesheets/listings.scss */
+.thumbnail {
+  position: relative;
+  padding: 0px;
+  margin-bottom: 20px;
+}
+
+/* line 38, /Users/shinomatsuoka/Desktop/PairBnB/app/assets/stylesheets/listings.scss */
+.thumbnail img {
+  width: 100%;
+}
+/* line 1, /Users/shinomatsuoka/Desktop/PairBnB/app/assets/stylesheets/scaffolds.scss */
+body {
+  background-color: #fff;
+  color: #333;
+  margin: 33px;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 10, /Users/shinomatsuoka/Desktop/PairBnB/app/assets/stylesheets/scaffolds.scss */
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 16, /Users/shinomatsuoka/Desktop/PairBnB/app/assets/stylesheets/scaffolds.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 22, /Users/shinomatsuoka/Desktop/PairBnB/app/assets/stylesheets/scaffolds.scss */
+a {
+  color: #000;
+}
+/* line 25, /Users/shinomatsuoka/Desktop/PairBnB/app/assets/stylesheets/scaffolds.scss */
+a:visited {
+  color: #666;
+}
+/* line 29, /Users/shinomatsuoka/Desktop/PairBnB/app/assets/stylesheets/scaffolds.scss */
+a:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+/* line 35, /Users/shinomatsuoka/Desktop/PairBnB/app/assets/stylesheets/scaffolds.scss */
+th {
+  padding-bottom: 5px;
+}
+
+/* line 39, /Users/shinomatsuoka/Desktop/PairBnB/app/assets/stylesheets/scaffolds.scss */
+td {
+  padding: 0 5px 7px;
+}
+
+/* line 44, /Users/shinomatsuoka/Desktop/PairBnB/app/assets/stylesheets/scaffolds.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+/* line 50, /Users/shinomatsuoka/Desktop/PairBnB/app/assets/stylesheets/scaffolds.scss */
+#notice {
+  color: green;
+}
+
+/* line 54, /Users/shinomatsuoka/Desktop/PairBnB/app/assets/stylesheets/scaffolds.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 60, /Users/shinomatsuoka/Desktop/PairBnB/app/assets/stylesheets/scaffolds.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 67, /Users/shinomatsuoka/Desktop/PairBnB/app/assets/stylesheets/scaffolds.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px -7px 0;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 77, /Users/shinomatsuoka/Desktop/PairBnB/app/assets/stylesheets/scaffolds.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+/* line 83, /Users/shinomatsuoka/Desktop/PairBnB/app/assets/stylesheets/scaffolds.scss */
+label {
+  display: block;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
+
+ body { 
+ 	padding-top: 30px; 
+ }
+/*　submit*/
+ .submit-field {
+ 	padding-top: 15px;
+ 	padding-bottom: 15px;
+ }
+
+/* navbar*/
+.navbar-link{
+	padding-right: 30px;
+
+}
+
+/*form*/
+.container_form {
+ 	padding-top: 15px;
+ 	padding-bottom: 15px;
+ }
+
+/*hello index title*/
+
+ .title{
+    text-align: center;  
+    margin: 30px;
+	padding: 15px;
+	
+}
+
+.sub{
+  text-align: center;  
+    margin: 10px;
+  padding: 10px;
+
+}
+
+/*hello index thumnail*/
+/*row {
+	display: flex;
+	justify-content:         space-around;
+	margin: 10px;
+}
+.row section {
+  margin: 10px;
+  border-radius: 5px;
+  padding: 15px;
+  flex: 1;
+}*/
+
+/*hellp indec seachform*/
+.container_seach{
+    align-items: center;
+	display: flex;
+	margin: 10px;
+	padding: 10px;
+	justify-content: center;
+
+}
+
+
+/*hellp indec seachform*/
+.new_listing{
+	padding-top: 15px;
+	padding-right: 15px;
+	padding-bottom: 15px;
+
+}
+
+/*listing show carousel bannar*/
+
+.carousel-inner img{
+    width: 100%;  
+    height: auto;
+	
+
+}
+
+/*listing index sortbar*/
+
+.sortable_bar{
+    padding-top:  10px;
+    padding-bottom:  10px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+.all_listings{
+    padding:  15px;
+}
+
+/*listing index thumbnail*/
+.container {
+    padding-right: 10px;
+    padding-left:  10px;
+    padding-bottom:  10px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.thumbnail {
+    position: relative;
+    padding: 0px;
+    margin-bottom: 20px;
+}
+
+/*.footer*/
+
+#social-fb:hover {
+     color: #3B5998;
+ }
+ #social-tw:hover {
+     color: #4099FF;
+ }
+ #social-gp:hover {
+     color: #d34836;
+ }
+ #social-em:hover {
+     color: #f39c12;
+ }
+
+ .row-eq-height {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.carousel-inner img{
+    width: 100%;  
+    height: auto;
+  
+
+}
+
+.sortable_bar{
+    padding-top:  10px;
+    padding-bottom:  10px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+.all_listings{
+    padding:  15px;
+}
+
+
+.container {
+    padding-right: 50px;
+    padding-left:  50px;
+    padding-bottom:  50px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.thumbnail {
+    position: relative;
+    padding: 0px;
+    margin-bottom: 20px;
+}
+
+.thumbnail img {
+    width: 100%;
+}
+
+
+
+
+ 
