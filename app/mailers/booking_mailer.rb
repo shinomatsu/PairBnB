@@ -7,7 +7,7 @@ class BookingMailer < ApplicationMailer
     @customer = customer
     @listing = Listing.find(listing_id)
     #once customer reserved a listing, it will send email to the listing host.
-    mail(to: @host, subject: "You have received a booking from #{@customer}")
+    mail(subject: "You have received a booking from #{@customer}")
 
   end
 
